@@ -45,6 +45,7 @@ public class Btn_Right : MonoBehaviour, IPointerDownHandler
         {
             rightButton.interactable = false;
             leftButton.interactable = false;
+           
 
         }
 
@@ -79,7 +80,7 @@ public class Btn_Right : MonoBehaviour, IPointerDownHandler
         if (isPressedR)
         {
             
-            anim.SetTrigger("isTapped_Derecha");
+            anim.SetTrigger("isTapped_DeCentro_Derecha");
             isPressedR = false;
 
         }

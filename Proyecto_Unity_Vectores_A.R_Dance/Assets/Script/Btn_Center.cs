@@ -31,9 +31,11 @@ public class Btn_Center : MonoBehaviour, IPointerDownHandler
         {
             isPressedC = false;
             centerButton.interactable = false;
+            
 
         }
 
+        
 
         if (varCen.col_Der == 1 )
         {
@@ -49,14 +51,20 @@ public class Btn_Center : MonoBehaviour, IPointerDownHandler
             
         }
 
-        if (isPressedC == false && varCen.col_Cen == 0)
+        if (isPressedC == false && varCen.col_Cen == 0 && varCen.col_Der == 1)
         {
-            anim.SetTrigger("backToIdle");
+            // anim.SetTrigger("isTapped_DeDerecha_Centro");
 
         }
 
- 
-       
+        if (isPressedC == false && varCen.col_Cen == 0 && varCen.col_Izq == 1)
+        {
+            // anim.SetTrigger("isTapped_DeDerecha_Centro");
+
+        }
+
+
+
     }
 
 
@@ -64,7 +72,8 @@ public class Btn_Center : MonoBehaviour, IPointerDownHandler
     public void OnPointerDown(PointerEventData eventData)
     {
         isPressedC = true;
-
+        
+        
 
         if ((lastClick + interval) > Time.time)
         {
@@ -83,6 +92,7 @@ public class Btn_Center : MonoBehaviour, IPointerDownHandler
     }
 
     
+    
 
     public void OnClick_Center_To_Right()
 
@@ -96,7 +106,7 @@ public class Btn_Center : MonoBehaviour, IPointerDownHandler
             
         }
 
-      
+       
 
     }
 
