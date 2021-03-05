@@ -36,7 +36,7 @@ public class Btn_Right : MonoBehaviour, IPointerDownHandler
         {
 
             rightButton.interactable = true;
-            // rightButton.enabled = true;
+            
 
 
         }

@@ -9,6 +9,9 @@ public class player : MonoBehaviour
     public  int col_Cen = 0;
     public  int col_Der = 0;
     public Animator anim;
+    public bool golpeado = false;
+    
+
 
 
 
@@ -32,8 +35,10 @@ public class player : MonoBehaviour
     {
         classBtn_Right = boton_Der.GetComponent<Btn_Right>();
         classBtn_Center = boton_Cen.GetComponent<Btn_Center>();
-        classBtn_Left = boton_Izq.GetComponent<Btn_Left>();
+        classBtn_Left = boton_Izq.GetComponent<Btn_Left>();      
         anim = GetComponent<Animator>();
+        
+
     }
 
 
@@ -59,6 +64,10 @@ public class player : MonoBehaviour
             col_Der = 1;
             anim.SetTrigger("isTapped_Derecha");
         }
+
+
+       
+
 
 
     }

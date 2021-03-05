@@ -39,27 +39,27 @@ public class Btn_Center : MonoBehaviour, IPointerDownHandler
 
         if (varCen.col_Der == 1 )
         {
-           // centerButton.enabled = true;
+           
             centerButton.interactable = true;
 
         }
 
         if (varCen.col_Izq == 1)
         {
-           // centerButton.enabled = true;
+           
             centerButton.interactable = true;
             
         }
 
         if (isPressedC == false && varCen.col_Cen == 0 && varCen.col_Der == 1)
         {
-            // anim.SetTrigger("isTapped_DeDerecha_Centro");
+            
 
         }
 
         if (isPressedC == false && varCen.col_Cen == 0 && varCen.col_Izq == 1)
         {
-            // anim.SetTrigger("isTapped_DeDerecha_Centro");
+            
 
         }
 

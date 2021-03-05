@@ -30,7 +30,7 @@ public class Btn_Left : MonoBehaviour, IPointerDownHandler
         if (varIzq.col_Izq == 0 && varIzq.col_Cen == 1)
         {
             LeftButton.interactable = true;
-           // LeftButton.enabled = true;
+           
         }
         if (varIzq.col_Izq == 1)
         {
