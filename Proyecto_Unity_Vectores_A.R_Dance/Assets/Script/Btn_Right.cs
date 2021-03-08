@@ -16,8 +16,27 @@ public class Btn_Right : MonoBehaviour, IPointerDownHandler
     float interval = 0.4f;
 
 
+    public void SiTodaviaNoSeHaTerminadoLaAnimacion()
+    {
+        if (anim.GetCurrentAnimatorStateInfo(0).IsName("Desplazamiento_Derecha_Centro") &&
+            anim.GetCurrentAnimatorStateInfo(0).normalizedTime < 1.0f)
+        {
 
-    void Start()
+            rightButton.interactable = false;
+            leftButton.interactable = false;
+
+
+        }
+        else
+        {
+            rightButton.interactable = true;
+            leftButton.interactable = true;
+        }
+
+    }
+
+
+        void Start()
 
     {
 
@@ -35,22 +54,29 @@ public class Btn_Right : MonoBehaviour, IPointerDownHandler
         if (varDer.col_Der == 0 && varDer.col_Cen == 1)
         {
 
-            rightButton.interactable = true;
-            
+
+            SiTodaviaNoSeHaTerminadoLaAnimacion();
+
 
 
         }
+
+ 
         if (varDer.col_Der == 1)
 
         {
             rightButton.interactable = false;
             leftButton.interactable = false;
-           
 
         }
 
+       
+
     }
-  
+
+
+
+
 
     public void OnPointerDown(PointerEventData eventData)
     {
@@ -74,14 +100,19 @@ public class Btn_Right : MonoBehaviour, IPointerDownHandler
     }
 
     
+    
+
+
 
     public void OnClick_To_Right()
     {
         if (isPressedR)
         {
-            
+            anim.ResetTrigger("Idle/Center");
             anim.SetTrigger("isTapped_DeCentro_Derecha");
             isPressedR = false;
+            
+
 
         }
 

@@ -51,17 +51,7 @@ public class Btn_Center : MonoBehaviour, IPointerDownHandler
             
         }
 
-        if (isPressedC == false && varCen.col_Cen == 0 && varCen.col_Der == 1)
-        {
-            
-
-        }
-
-        if (isPressedC == false && varCen.col_Cen == 0 && varCen.col_Izq == 1)
-        {
-            
-
-        }
+       
 
 
 
@@ -91,40 +81,51 @@ public class Btn_Center : MonoBehaviour, IPointerDownHandler
 
     }
 
-    
+
     
 
-    public void OnClick_Center_To_Right()
+
+        
+
+    public void OnClick_Center()
 
     {
         if (isPressedC && varCen.col_Der == 1)
         {
-            
+            anim.ResetTrigger("isTapped_Derecha");
             anim.SetTrigger("isTapped_DeDerecha_Centro");
             isPressedC = false;
 
+            if (anim.GetCurrentAnimatorStateInfo(0).length < anim.GetCurrentAnimatorStateInfo(0).normalizedTime)
+            {
+                anim.SetTrigger("Idle/Center");
+            }
             
-        }
-
-       
-
-    }
-
-    public void OnClick_Center_To_Left()
-    {
-        if (isPressedC && varCen.col_Izq == 1)
-        {
-
-            anim.SetTrigger("isTapped_DeIzquierda_Centro");
-            isPressedC = false;
 
            
 
+
+
         }
+        else if (isPressedC && varCen.col_Izq == 1)
+        {
+            anim.ResetTrigger("isTapped_Izquierda");
+            anim.SetTrigger("isTapped_DeIzquierda_Centro");
+            isPressedC = false;
+
+           if (anim.GetCurrentAnimatorStateInfo(0).length < anim.GetCurrentAnimatorStateInfo(0).normalizedTime)
+            {
+
+                anim.SetTrigger("Idle/Center");
+            }
+
+        }
+
 
 
     }
 
+   
     
 
 

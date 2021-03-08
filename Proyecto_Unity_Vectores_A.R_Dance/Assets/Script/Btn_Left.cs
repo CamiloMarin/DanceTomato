@@ -16,6 +16,26 @@ public class Btn_Left : MonoBehaviour, IPointerDownHandler
     float interval = 0.4f;
 
 
+
+    public void SiTodaviaNoSeHaTerminadoLaAnimacion()
+    {
+        if (anim.GetCurrentAnimatorStateInfo(0).IsName("Desplazamiento_Izquierda_Centro") &&
+            anim.GetCurrentAnimatorStateInfo(0).normalizedTime < 1.0f)
+        {
+
+            LeftButton.interactable = false;
+            RightButton.interactable = false;
+        }
+        else
+        {
+            LeftButton.interactable = true;
+            RightButton.interactable = true;
+        }
+
+    }
+
+
+
     void Start()
     {
         Button btn = LeftButton.GetComponent<Button>();
@@ -29,8 +49,9 @@ public class Btn_Left : MonoBehaviour, IPointerDownHandler
     {
         if (varIzq.col_Izq == 0 && varIzq.col_Cen == 1)
         {
-            LeftButton.interactable = true;
-           
+            SiTodaviaNoSeHaTerminadoLaAnimacion();
+
+
         }
         if (varIzq.col_Izq == 1)
         {
@@ -71,6 +92,7 @@ public class Btn_Left : MonoBehaviour, IPointerDownHandler
     {
         if (isPressedL)
         {
+            anim.ResetTrigger("Idle/Center");
             anim.SetTrigger("isTapped_DeCentro_Izquierda");
             isPressedL = false;
 

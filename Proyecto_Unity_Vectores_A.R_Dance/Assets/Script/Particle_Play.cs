@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class Particle_Play : MonoBehaviour
 {
-    
+    public player script_player;
     public GameObject DPlayer;
     private Transform xAxis_DPlayer;
-    public player script_player;
+    
     public ParticleSystem tomatoHit;
     public ParticleSystem death1;
     public ParticleSystem death2;
     public ParticleSystem death3;
+
+
     int[] variables = new int[3] { 1, 2, 3 };
     public int result = 0;
     bool runOnce = false;
